@@ -1,0 +1,115 @@
+.container-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.container-section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.container-section::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 50%;
+  border: 2px solid #888;
+}
+
+.container-section::-webkit-scrollbar-track {
+  background-color: #4cb2f7;
+}
+
+.container {
+  width: 500px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 80px;
+}
+
+.container.expanded {
+  max-height: 500px;
+  background-color: #b3d2f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0px; /* Centrar horizontalmente */
+  cursor: pointer;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 500px;
+}
+
+.container-header {
+  background-color: #1e7bc7;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.container-header img {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+}
+
+.container-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.container-content {
+  padding: 30px;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.App.dark-mode .container {
+  background-color: #5b606b;
+  color: #f0f0f0;
+}
+
+.App.dark-mode .container-header {
+  background-color: #405a6e;
+}
+
+/* Estilos para pantallas más pequeñas, como teléfonos móviles */
+@media only screen and (max-width: 768px) {  
+  .container {
+    width: 90%;
+    margin: 10px;
+  }
+
+  .container-header img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .container-header h2 {
+    font-size: 16px;
+  }
+
+  .container-content {
+    padding: 20px;
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas */
+@media only screen and (max-width: 480px) {  
+  .container-header img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .container-header h2 {
+    font-size: 14px;
+  }
+
+  .container-content {
+    padding: 15px;
+  }
+}

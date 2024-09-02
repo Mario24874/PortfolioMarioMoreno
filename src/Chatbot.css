@@ -1,0 +1,180 @@
+/* Estilos para el contenedor del chatbot */
+.chatbot-container {
+    position: fixed;
+    bottom: 150px;
+    right: 20px;
+    width: 300px;
+    transition: all 0.5s ease;
+    max-width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+  }
+  
+  /* Estilos para el área de mensajes */
+  .chatbot-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Estilos para los mensajes individuales */
+  .chatbot-message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+  }
+  
+  /* Estilos para los mensajes del usuario */
+  .chatbot-message.user {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Estilos para los mensajes del chatbot */
+  .chatbot-message.bot {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+    color: black;
+  }
+  
+  /* Estilos para el input de mensajes */
+  .chatbot-input {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    display: flex;
+  }
+  
+  .chatbot-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin-right: 10px;
+  }
+  
+  .chatbot-input button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 15px;
+    background-color: #007bffe0;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .chatbot-input button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para el botón del chatbot */
+.chatbot-button {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    overflow: hidden; /* Asegura que el contenido no sobresalga */
+  }
+  
+  .chatbot-button.open {
+    width: 80px;
+    border-radius: 40px;
+    margin-right: 80px;
+  }
+  
+  .chatbot-button::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .chatbot-button.open::before {
+    content: 'X';    
+  }
+  
+  .chatbot-button img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .chatbot-button.open img {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .chatbot-button.open::before {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .chatbot-button:not(.open)::before {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* Modo oscuro para el chatbot */
+  .App.dark-mode .chatbot-container {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    
+  }
+  
+  .App.dark-mode .chatbot-button {
+    background-color: #333; /* Color de fondo del botón en modo oscuro */
+    color: #f0f0f0; /* Color del texto en modo oscuro */
+  }
+  
+  .App.dark-mode .chatbot-button:hover {
+    background-color: #555; /* Color de fondo al pasar el mouse en modo oscuro */
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .chatbot-container {
+      bottom: 100px; /* Ajusta según el tamaño del botón flotante */
+      right: 10px;
+    }
+  
+    .chatbot-button {
+        bottom: 15px;
+        right: 20px;
+      }
+
+    .chatbot-button.open {
+        margin-right: 80px;
+
+    }
+  }

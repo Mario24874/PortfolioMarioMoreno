@@ -1,0 +1,203 @@
+/* Estilos globales */
+:root {
+  --bg-color-light: #ffffff;
+  --text-color-light: #000000;
+  --bg-color-dark: #1c1c1c;
+  --text-color-dark: #f0f0f0;
+}
+
+.App {
+  text-align: center;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  transition: background-image 0.5s ease;
+  background-image: url('clearsky.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+  .App {
+    font-size: calc(8px + 1.5vmin); /* Reduce el tamaño de la fuente */
+  }
+
+  .container {
+    width: 90%;
+    margin: 10px;
+  }
+
+  .container-content {
+    padding: 20px; /* Reduce el padding */
+    max-height: 250px; /* Reduce la altura máxima */
+  }
+
+  .container-header {
+    padding: 8px; /* Reduce el padding */
+  }
+
+  .rounded-image {
+    width: 150px; /* Reduce el tamaño de la imagen redonda */
+    height: 150px;
+  }
+
+  .circle-text {
+    width: 80px; /* Reduce el tamaño del círculo de texto */
+    height: 80px;
+  }
+
+  .circle-text span {
+    font-size: 40px; /* Reduce el tamaño de la fuente del círculo de texto */
+  }
+
+  .welcome-message h1 {
+    font-size: 22px; /* Reduce el tamaño de la fuente del mensaje de bienvenida */
+  }
+}
+
+/* Modo oscuro */
+.App.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  background-image: url('nightstorm.gif'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Ajustes para pantallas pequeñas en modo oscuro */
+@media only screen and (max-width: 768px) {
+  .App.dark-mode .container {
+    background-color: #333; /* Cambia el color de fondo para mejorar la legibilidad */
+    width: 90%;
+    margin: 10px;
+    
+  }
+
+  .App.dark-mode .container-content {
+    padding: 30px; /* Reduce el padding para pantallas pequeñas */
+    max-height: 250px; /* Ajusta la altura máxima para pantallas pequeñas */
+    margin: 0;
+  }
+
+  .App.dark-mode .container-header {
+    padding: 20px; /* Reduce el padding para pantallas pequeñas */
+  }
+}
+
+.App-link {
+  color: #50b7d3;
+}
+
+.App.dark-mode .App-header {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  background-color: transparent; 
+}
+
+.circle-text {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  margin-bottom: 10px;
+}
+
+.circle-text span {
+  font-size: 50px;
+  color: var(--text-color-light);
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+.App.dark-mode .circle-text span {
+  color: var(--text-color-dark);
+}
+
+.container-section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.container-section::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 50%;
+  border: 2px solid #888;
+}
+
+.container-section::-webkit-scrollbar-track {
+  background-color: #9fbbf0;
+}
+
+.rounded-image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 300px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 80px;
+}
+
+.container.expanded {
+  max-height: 500px;
+  background-color: #1979da;
+}
+
+.container-header img {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.container-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.container-content {
+  padding: 0;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 10px;
+  }
+
+  .App-logo {
+    height: 150px;
+  }
+
+  .welcome-message h1 {
+    font-size: 24px;
+  }
+}
+
+.chatbot-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}

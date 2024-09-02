@@ -1,0 +1,46 @@
+/* Estilos para ImageComponent */
+.image-component {
+  border: 2px solid rgb(108, 143, 219); /* Añade un borde rojo para visualizar el contenedor */
+  min-height: 450px; /* Asegúrate de que tenga una altura mínima */
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-carousel {
+  width: 100%;
+  height: auto;
+  position: relative;
+  perspective: 1000px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.carousel-image.active {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.carousel-image:not(.active) {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 600px) {
+  .image-component {
+    min-height: 25vh; /* 50% de la altura de la ventana gráfica */
+  }
+}

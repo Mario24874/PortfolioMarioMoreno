@@ -1,0 +1,177 @@
+.App-header {
+  background-color: transparent;
+  color: var(--text-color-light);
+  padding: 0;
+}
+
+.logo-container {
+  padding: 0;
+}
+
+.App-logo {
+  height: 300px;
+  background-image: url('../images/Logo_Mario_Moreno-SF.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.welcome-message h1 {
+  font-size: 36px;
+  margin: 0;
+  color: var(--text-color-light);
+}
+
+.content-container {  
+  text-align: left;  
+  padding: 0;  
+}
+
+.dark-mode-toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+.circle-text {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: transparent;   
+  padding: 20px;
+  margin: 0 30px;
+}
+
+.circle-text span {
+  font-size: 25px;
+  color: var(--text-color-light);
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+.App.dark-mode .circle-text span {
+  color: var(--text-color-dark);
+}
+
+.App.dark-mode .welcome-message h1 {
+  color: var(--text-color-dark);
+}
+
+.dark-mode-toggle-container {
+  margin-top: 20px;
+}
+
+.dark-mode-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.dark-mode-toggle .switch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #8fa8c4;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.dark-mode-toggle .switch:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.dark-mode-toggle .switch img {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 26px;
+  height: 26px;
+  transition: transform 0.4s;
+}
+
+.dark-mode-toggle.dark-mode .switch {
+  background-color: #6885a3;
+}
+
+.dark-mode-toggle.dark-mode .switch:before {
+  transform: translateX(26px);
+}
+
+.dark-mode-toggle .switch img:first-child {
+  transform: translateX(0); /* Ajuste para mantener el switch en la posición inicial */
+}
+
+.dark-mode-toggle.dark-mode .switch img:first-child {
+  transform: translateX(26px); /* Movimiento del switch al activar el modo oscuro */
+}
+
+@media only screen and (max-width: 768px) {
+  /* Estilos para pantallas más pequeñas, como teléfonos móviles */
+  .App-header {
+    padding: 10px;
+  }
+
+  .logo-container {
+    margin-right: 150px;
+  }
+
+  .App-logo {
+    height: 200px;
+  }
+
+  .welcome-message h1 {
+    font-size: 24px;
+  }
+
+  .circle-text {
+    width: 50px;
+    height: 50px;
+    margin: 0 20px;
+  }
+
+  .circle-text span {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Estilos para pantallas aún más pequeñas */
+  .logo-container {
+    margin-right: 100px;
+  }
+
+  .App-logo {
+    height: 150px;
+  }
+
+  .welcome-message h1 {
+    font-size: 18px;
+  }
+
+  .circle-text {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+  }
+
+  .circle-text span {
+    font-size: 12px;
+  }
+}

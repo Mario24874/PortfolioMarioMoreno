@@ -1,0 +1,168 @@
+
+/* Estilos para el contenedor del formulario */
+.form-container {
+  padding: 0px;
+  overflow-y: auto;
+  max-height: 300px;
+  
+}
+
+.form-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 0%;
+  border: 2px solid #888;
+}
+
+.form-container::-webkit-scrollbar-track {
+  background-color: #dee4f1;
+}
+
+/* Estilos generales para el contenedor del formulario */
+.container {
+  width: 500px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 80px;
+  margin-bottom: 20px;
+}
+
+.container.expanded {
+  max-height: 500px;
+  background-color: #b3d2f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px auto; /* Centrar horizontalmente */
+  cursor: pointer;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 500px;
+}
+
+/* Estilos para el encabezado del contenedor */
+.container-header {
+  background-color: #5ba4e0;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.container-header img {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+}
+
+
+/* Estilos para los inputs y textarea */
+.field {  
+  width: 94%;
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 1.5;
+
+}
+
+.field label {
+  display: flexbox;
+  margin-bottom: 5px;
+  font-size: 20px;  
+}
+
+.field input,
+.field textarea {
+  display: flexbox;   
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;   
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+/* Estilos para el botón de envío */
+#button {
+  display: flexbox;
+  justify-content: center;
+  background-color: #3a5d80;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 50%;
+}
+
+#button:hover {
+  background-color: #0c7cd5;
+}
+
+/* Estilos para modo oscuro */
+.App.dark-mode .form-container {
+  background-color: #3f5168;
+  color: #f0f0f0;
+}
+
+.App.dark-mode .field input,
+.App.dark-mode .field textarea {
+  background-color: #212836;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.App.dark-mode #button {
+  background-color: #262b38;
+  color: #f0f0f0;
+}
+
+.App.dark-mode #button:hover {
+  background-color: #555;
+}
+
+/* Media queries para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 10px auto; /* Centrar verticalmente */
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .field input,
+  .field textarea {
+    font-size: 14px;
+  }
+
+  .field textarea {
+    height: 120px;
+  }
+
+  #button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .field input,
+  .field textarea {
+    font-size: 12px;
+  }
+
+  .field textarea {
+    height: 100px;
+  }
+}
