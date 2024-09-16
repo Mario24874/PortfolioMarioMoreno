@@ -61,6 +61,10 @@ function VideoPro() {
     setPlaying((prev) => ({ ...prev, [index]: true }));
   };
 
+  const handleEnded = (index) => {
+    setPlaying((prev) => ({ ...prev, [index]: false }));
+  };
+
   return (
     <div className="video-pro-container">
       <div className="video-pro-header">
