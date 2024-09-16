@@ -5,11 +5,13 @@ import videoSrc from '../images/media/WebPromo.mp4';
 import promoWebSrc from '../images/media/PromoWeb.mp4';
 import desarrolloWebSrc from '../images/media/DesarrolloWeb.mp4';
 import desarrolloWebAppSrc from '../images/media/DesarrolloWebApp.mp4';
+import appmovilesSrc from '../images/media/Appmoviles.mp4';
 import chatBotSrc from '../images/media/ChatBot.mp4';
 import webPromoThumbnail from '../images/thumbnails/WebPromoThumbnail.jpg';
 import promoWebThumbnail from '../images/thumbnails/PromoWebThumbnail.jpg';
 import desarrolloWebThumbnail from '../images/thumbnails/DesarrolloWebThumbnail.jpg';
 import desarrolloWebAppThumbnail from '../images/thumbnails/DesarrolloWebAppThumbnail.jpg';
+import appmovilesThumbnail from '../images/thumbnails/AppmovilesThumbnail.jpg';
 import chatBotThumbnail from '../images/thumbnails/ChatBotThumbnail.jpg';
 import './VideoPro.css';
 
@@ -38,6 +40,12 @@ function VideoPro() {
       type: 'video/mp4',
       title: 'Desarrollo Web App',
       thumbnail: desarrolloWebAppThumbnail
+    },
+    {
+      src: appmovilesSrc,
+      type: 'video/mp4',
+      title: 'Desarrollo App Moviles',
+      thumbnail: appmovilesThumbnail
     },
     {
       src: chatBotSrc,
@@ -72,6 +80,7 @@ function VideoPro() {
                 width="100%"
                 height="auto"
                 className="video-player"
+                onEnded={() => handleEnded(index)}
               />
             </div>
             <div className="video-title">{source.title}</div>
