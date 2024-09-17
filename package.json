@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@supabase/supabase-js": "^2.45.4",
     "body-parser": "^1.20.2",
     "classnames": "^2.5.1",
     "dotenv": "^16.4.5",
