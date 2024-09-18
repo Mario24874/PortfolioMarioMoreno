@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import supabase from '../supabase';
 import blogPosts from '../blogPosts';
-import blogIcon from '../images/blog-icon.png';
 import './Blog.css';
 
 const Blog = () => {
@@ -33,6 +32,9 @@ const Blog = () => {
   const handleLogin = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
+      options: {
+        redirectTo: 'https://portfoliomariomoreno.netlify.app/blog', // Asegúrate de que esta URL coincida con la URL de redirección en Supabase
+      },
     });
 
     if (error) {
@@ -73,7 +75,7 @@ const Blog = () => {
   return (
     <div className="blog-container">
       <div className="blog-header">
-      <img src={blogIcon} alt="Blog Icon" /> Technology Blog
+        <h2>Blog</h2>
       </div>
       <div className="blog-content">
         {blogPosts.map((post) => (
@@ -92,7 +94,7 @@ const Blog = () => {
         {user ? (
           <div>
             <form onSubmit={handleCommentSubmit}>
-              <textarea value={newComment} onChange={handleCommentChange} placeholder="Escribe un comentario..." />
+              <textarea value={newComment} onChange={handleCommentChange} placeholder="Write a comment..." />
               <button type="submit">Send</button>
             </form>
             <button onClick={handleLogout}>Log out</button>
