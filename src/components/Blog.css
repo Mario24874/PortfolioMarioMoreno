@@ -21,8 +21,10 @@
                sans-serif;
 }
 
-.blog-header h2 {
-  margin: 0;
+.blog-header img {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
 }
 
 .blog-content {
