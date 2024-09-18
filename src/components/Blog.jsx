@@ -71,7 +71,7 @@ const Blog = () => {
 
       const { data, error } = await supabase
         .from('comments')
-        .insert([{ text: newComment, user_name: userName, user_avatar: avatarUrl }]);
+        .insert([{ text: newComment, user_name: userName, user_avatar: avatarUrl, created_at: new Date().toISOString() }]);
 
       if (error) {
         console.error(error);
