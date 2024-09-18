@@ -76,6 +76,13 @@
   margin-bottom: 10px;
 }
 
+.blog-content-wrapper {
+  max-height: 300px; /* Altura máxima para el contenedor del contenido */
+  overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede la altura máxima */
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
 .blog-content {
   font-size: 14px;
   color: #555555;
@@ -201,4 +208,21 @@
 
 .comments button:active {
   background-color: #b71c1c; /* Color de fondo rojo más oscuro al hacer clic */
+}
+
+/* Estilos para el input de comentarios */
+.comments textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los botones de comentarios */
+.comment-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }

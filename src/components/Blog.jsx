@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import supabase from '../supabase';
 import blogPosts from '../blogPosts';
+import blogIcon from '../images/blog-icon.png';
 import './Blog.css';
 
 const Blog = () => {
@@ -76,8 +77,8 @@ const Blog = () => {
 
   return (
     <div className="blog-container">
-      <div className="blog-header">
-        <h2>Blog</h2>
+      <div className="blog-header">      
+        <img src={blogIcon} alt="Blog Icon" /> Technology Blog
       </div>
       <div className="blog-content">
         {blogPosts.map((post) => (
@@ -88,7 +89,9 @@ const Blog = () => {
             <div className="blog-title" onClick={() => togglePost(post.id)}>{post.title}</div>
             <div className="blog-date">{post.date}</div>
             {expandedPost === post.id && (
-              <div className="blog-content">{post.content}</div>
+              <div className="blog-content-wrapper">
+                <div className="blog-content">{post.content}</div>
+              </div>
             )}
           </div>
         ))}
@@ -99,9 +102,11 @@ const Blog = () => {
           <div>
             <form onSubmit={handleCommentSubmit}>
               <textarea value={newComment} onChange={handleCommentChange} placeholder="Write a comment..." />
-              <button type="submit">Send</button>
+              <div className="comment-buttons">
+                <button type="submit">Send</button>
+                <button onClick={handleLogout}>Log out</button>
+              </div>
             </form>
-            <button onClick={handleLogout}>Log out</button>
           </div>
         ) : (
           <button className="google-signin-button" onClick={handleLogin}>
