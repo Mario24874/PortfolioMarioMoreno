@@ -119,3 +119,36 @@
       font-size: 16px;
   }
 }
+
+/* Estilos para el botón de Sign in with Google */
+.google-signin-button {
+  background-color: #4285F4; /* Color de fondo de Google */
+  color: white; /* Color del texto */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.google-signin-button:hover {
+  background-color: #357AE8; /* Color de fondo al pasar el mouse */
+}
+
+.google-signin-button:active {
+  background-color: #2F5BB7; /* Color de fondo al hacer clic */
+}
+
+.google-signin-button::before {
+  content: '';
+  background-image: url('/images/google-icon.png');/* Ruta a un icono de Google */
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}

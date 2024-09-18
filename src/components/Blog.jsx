@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import supabase from '../supabase';
 import blogPosts from '../blogPosts';
+import blogIcon from '../images/blog-icon.png';
 import './Blog.css';
 
 const Blog = () => {
@@ -72,7 +73,7 @@ const Blog = () => {
   return (
     <div className="blog-container">
       <div className="blog-header">
-        <h2>Blog</h2>
+      <img src={blogIcon} alt="Blog Icon" /> Technology Blog
       </div>
       <div className="blog-content">
         {blogPosts.map((post) => (
@@ -97,7 +98,9 @@ const Blog = () => {
             <button onClick={handleLogout}>Log out</button>
           </div>
         ) : (
-          <button onClick={handleLogin}>Sing in with Google</button>
+          <button className="google-signin-button" onClick={handleLogin}>
+            Sign in with Google
+          </button>
         )}
         <ul>
           {comments.map((comment, index) => (
