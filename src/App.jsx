@@ -9,7 +9,6 @@ import Form from './components/Form';
 import Footer from './components/Footer';
 import MyChatbot from './Chatbot'; 
 import Blog from './components/Blog'; 
-import BlogPostDetail from './components/BlogPostDetail'; 
 import './App.css';
 import chatbotIcon from './images/custom-icon.png'; 
 
@@ -26,7 +25,6 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Sections />} />
-          <Route path="/blog/:id" element={<BlogPostDetail />} />
         </Routes>
         <ImageComponent />
         <VideoPro />

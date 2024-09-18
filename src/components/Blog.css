@@ -41,6 +41,11 @@
   overflow: hidden;
   padding: 10px;
   position: relative;
+  transition: all 0.3s ease;
+}
+
+.blog-item.expanded {
+  grid-column: span 2;
 }
 
 .blog-thumbnail-wrapper {
@@ -62,6 +67,7 @@
   font-weight: bold;
   margin: 10px 0;
   color: #333333;
+  cursor: pointer;
 }
 
 .blog-date {
@@ -148,9 +154,51 @@
 
 .google-signin-button::before {
   content: '';
-  background-image: url('/images/google-icon.png');/* Ruta a un icono de Google */
+  background-image: url('/images/google-icon.png'); /* Ruta a la imagen en la carpeta public */
   background-size: cover;
   width: 20px;
   height: 20px;
   margin-right: 10px;
+}
+
+/* Estilos para el botón de Send */
+.comments button[type="submit"] {
+  background-color: #4CAF50; /* Color de fondo verde */
+  color: white; /* Color del texto */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.comments button[type="submit"]:hover {
+  background-color: #45a049; /* Color de fondo verde más oscuro al pasar el mouse */
+}
+
+.comments button[type="submit"]:active {
+  background-color: #3e8e41; /* Color de fondo verde más oscuro al hacer clic */
+}
+
+/* Estilos para el botón de Log out */
+.comments button {
+  background-color: #f44336; /* Color de fondo rojo */
+  color: white; /* Color del texto */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.comments button:hover {
+  background-color: #da190b; /* Color de fondo rojo más oscuro al pasar el mouse */
+}
+
+.comments button:active {
+  background-color: #b71c1c; /* Color de fondo rojo más oscuro al hacer clic */
 }

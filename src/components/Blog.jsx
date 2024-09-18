@@ -9,6 +9,7 @@ const Blog = () => {
   const [user, setUser] = useState(null);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
+  const [expandedPost, setExpandedPost] = useState(null);
 
   useEffect(() => {
     const getUser = async () => {
@@ -31,10 +32,7 @@ const Blog = () => {
 
   const handleLogin = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: 'https://portfoliomariomoreno.netlify.app/blog', // Asegúrate de que esta URL coincida con la URL de redirección en Supabase
-      },
+      provider: 'google',      
     });
 
     if (error) {
@@ -72,6 +70,10 @@ const Blog = () => {
     }
   };
 
+  const togglePost = (postId) => {
+    setExpandedPost(postId === expandedPost ? null : postId);
+  };
+
   return (
     <div className="blog-container">
       <div className="blog-header">
@@ -79,13 +81,15 @@ const Blog = () => {
       </div>
       <div className="blog-content">
         {blogPosts.map((post) => (
-          <div key={post.id} className="blog-item">
-            <Link to={`/blog/${post.id}`} className="blog-thumbnail-wrapper">
+          <div key={post.id} className={`blog-item ${expandedPost === post.id ? 'expanded' : ''}`}>
+            <div className="blog-thumbnail-wrapper" onClick={() => togglePost(post.id)}>
               <img src={post.thumbnail} alt={post.title} className="blog-thumbnail" />
-            </Link>
-            <div className="blog-title">{post.title}</div>
+            </div>
+            <div className="blog-title" onClick={() => togglePost(post.id)}>{post.title}</div>
             <div className="blog-date">{post.date}</div>
-            <div className="blog-content">{post.content}</div>
+            {expandedPost === post.id && (
+              <div className="blog-content">{post.content}</div>
+            )}
           </div>
         ))}
       </div>
