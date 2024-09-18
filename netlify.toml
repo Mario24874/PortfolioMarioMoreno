@@ -1,0 +1,9 @@
+# netlify.toml
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog/:splat"
+  status = 200
