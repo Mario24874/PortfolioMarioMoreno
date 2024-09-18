@@ -1,0 +1,39 @@
+/* src/components/BlogPostDetail.css */
+.blog-post-detail {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f02d;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-post-detail h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .blog-post-content {
+    font-size: 16px;
+    color: #555555;
+  }
+  
+  .blog-post-thumbnail {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para modo oscuro */
+  .App.dark-mode .blog-post-detail {
+    background-color: #3f516865;
+  }
+  
+  .App.dark-mode .blog-post-detail h1 {
+    color: #f0f0f0;
+  }
+  
+  .App.dark-mode .blog-post-content {
+    color: #dddddd;
+  }

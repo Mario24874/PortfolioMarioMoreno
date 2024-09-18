@@ -1,5 +1,6 @@
 // src/components/Blog.jsx
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import supabase from '../supabase';
 import blogPosts from '../blogPosts';
 import './Blog.css';
@@ -76,9 +77,9 @@ const Blog = () => {
       <div className="blog-content">
         {blogPosts.map((post) => (
           <div key={post.id} className="blog-item">
-            <div className="blog-thumbnail-wrapper">
+            <Link to={`/blog/${post.id}`} className="blog-thumbnail-wrapper">
               <img src={post.thumbnail} alt={post.title} className="blog-thumbnail" />
-            </div>
+            </Link>
             <div className="blog-title">{post.title}</div>
             <div className="blog-date">{post.date}</div>
             <div className="blog-content">{post.content}</div>
@@ -86,17 +87,17 @@ const Blog = () => {
         ))}
       </div>
       <div className="comments">
-        <h3>Comentarios</h3>
+        <h3>Comments</h3>
         {user ? (
           <div>
             <form onSubmit={handleCommentSubmit}>
               <textarea value={newComment} onChange={handleCommentChange} placeholder="Escribe un comentario..." />
-              <button type="submit">Enviar</button>
+              <button type="submit">Send</button>
             </form>
-            <button onClick={handleLogout}>Cerrar Sesión</button>
+            <button onClick={handleLogout}>Log out</button>
           </div>
         ) : (
-          <button onClick={handleLogin}>Iniciar Sesión con Google</button>
+          <button onClick={handleLogin}>Sing in with Google</button>
         )}
         <ul>
           {comments.map((comment, index) => (

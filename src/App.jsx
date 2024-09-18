@@ -7,10 +7,11 @@ import ImageComponent from './components/ImageComponent';
 import VideoPro from './components/VideoPro';
 import Form from './components/Form';
 import Footer from './components/Footer';
-import MyChatbot from './Chatbot'; 
-import Blog from './components/Blog'; 
+import MyChatbot from './Chatbot'; // Importa el componente del chatbot
+import Blog from './components/Blog'; // Importa el componente del blog
+import BlogPostDetail from './components/BlogPostDetail'; // Importa el componente de detalle del blog
 import './App.css';
-import chatbotIcon from './images/custom-icon.png'; 
+import chatbotIcon from './images/custom-icon.png'; // Importa tu icono
 
 function App() {
   const [showChatbot, setShowChatbot] = useState(false);
@@ -25,10 +26,11 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Sections />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPostDetail />} />
         </Routes>
         <ImageComponent />
         <VideoPro />
-        <Blog /> 
         <Form />
         <Footer />
         <MyChatbot isOpen={showChatbot} onToggle={toggleChatbot} />
