@@ -28,7 +28,7 @@
 }
 
 .blog-content {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
@@ -51,15 +51,19 @@
 .blog-thumbnail-wrapper {
   position: relative;
   cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .blog-thumbnail {
   width: 100%;
   height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.blog-thumbnail-wrapper:hover .blog-thumbnail {
+  transform: scale(1.1);
 }
 
 .blog-title {
@@ -86,6 +90,15 @@
 .blog-content {
   font-size: 14px;
   color: #555555;
+  line-height: 1.6; /* Ajusta el espaciado entre líneas para mejorar la legibilidad */
+  text-align: justify; /* Justifica el texto para que se ajuste al contenedor */
+}
+
+.blog-content img {
+  max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+  height: auto;
+  display: block;
+  margin: 10px 0; /* Añade un margen superior e inferior a las imágenes */
 }
 
 /* Estilos para modo oscuro */
@@ -225,4 +238,34 @@
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+
+/* Estilos para los comentarios */
+.comments ul {
+  list-style: none;
+  padding: 0;
+}
+
+.comments li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-text {
+  font-size: 14px;
+  color: #555555;
 }

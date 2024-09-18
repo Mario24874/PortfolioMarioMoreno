@@ -4,7 +4,15 @@ import { Link } from 'react-router-dom';
 import supabase from '../supabase';
 import blogPosts from '../blogPosts';
 import blogIcon from '../images/blog-icon.png';
+import post1 from '../posts/post1'; // Importa los archivos de contenido de los posts
+import post2 from '../posts/post2'; // Importa los archivos de contenido de los posts
 import './Blog.css';
+
+const postsContent = {
+  1: post1.content, // Extrae el contenido de cada post
+  2: post2.content,
+  // Agrega más posts aquí según sea necesario
+};
 
 const Blog = () => {
   const [user, setUser] = useState(null);
@@ -58,14 +66,17 @@ const Blog = () => {
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
     if (newComment.trim() !== '') {
+      const userName = user.email.split('@')[0];
+      const avatarUrl = user.user_metadata.avatar_url;
+
       const { data, error } = await supabase
         .from('comments')
-        .insert([{ text: newComment, user_id: user.id, user_email: user.email }]);
+        .insert([{ text: newComment, user_name: userName, user_avatar: avatarUrl }]);
 
       if (error) {
         console.error(error);
       } else {
-        setComments([...comments, { text: newComment, user_email: user.email, created_at: new Date().toLocaleDateString() }]);
+        setComments([...comments, { text: newComment, user_name: userName, user_avatar: avatarUrl, created_at: new Date().toLocaleDateString() }]);
         setNewComment('');
       }
     }
@@ -90,7 +101,7 @@ const Blog = () => {
             <div className="blog-date">{post.date}</div>
             {expandedPost === post.id && (
               <div className="blog-content-wrapper">
-                <div className="blog-content">{post.content}</div>
+                <div className="blog-content">{postsContent[post.id]}</div>
               </div>
             )}
           </div>
@@ -116,7 +127,11 @@ const Blog = () => {
         <ul>
           {comments.map((comment, index) => (
             <li key={index}>
-              <strong>{comment.user_email}</strong> ({comment.created_at}): {comment.text}
+              <div className="comment-header">
+                <img src={comment.user_avatar} alt={comment.user_name} className="comment-avatar" />
+                <strong>{comment.user_name}</strong> ({new Date(comment.created_at).toLocaleDateString()})
+              </div>
+              <div className="comment-text">{comment.text}</div>
             </li>
           ))}
         </ul>
