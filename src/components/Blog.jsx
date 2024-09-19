@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import supabase from '../supabase';
 import blogPosts from '../blogPosts';
 import blogIcon from '../images/blog-icon.png';
+import commentsIcon from '../images/comments-icon.png'; // Importa el icono de comentarios
 import post1 from '../posts/post1'; // Importa los archivos de contenido de los posts
 import post2 from '../posts/post2'; // Importa los archivos de contenido de los posts
 import './Blog.css';
@@ -115,7 +116,9 @@ const Blog = () => {
         ))}
       </div>
       <div className="comments">
-        <h3>Comments</h3>
+        <div className="comments-header">
+          <img src={commentsIcon} alt="Comments Icon" className="comments-icon" /> Comments
+        </div>
         {user ? (
           <div>
             <form onSubmit={handleCommentSubmit}>

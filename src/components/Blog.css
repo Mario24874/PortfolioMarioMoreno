@@ -204,23 +204,23 @@
 
 /* Estilos para el botón de Log out */
 .comments button {
-  background-color: #173e6f; /* Color de fondo rojo */
+  background-color: #2556a0; /* Color de fondo rojo */
   color: white; /* Color del texto */
   border: none;
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: pointer;  
   transition: background-color 0.3s ease;
   margin-top: 10px;
 }
 
 .comments button:hover {
-  background-color: #78a2fd; /* Color de fondo rojo más oscuro al pasar el mouse */
+  background-color: #3698f3; /* Color de fondo rojo más oscuro al pasar el mouse */
 }
 
 .comments button:active {
-  background-color: #173e6f; /* Color de fondo rojo más oscuro al hacer clic */
+  background-color: #2556a0; /* Color de fondo rojo más oscuro al hacer clic */
 }
 
 /* Estilos para el input de comentarios */
@@ -241,6 +241,13 @@
 }
 
 /* Estilos para los comentarios */
+.comments {  
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-align: center; /* Centrar la sección de comentarios */
+}
+
 .comments ul {
   list-style: none;
   padding: 0;
@@ -265,19 +272,35 @@
   margin-right: 10px;
 }
 
-.comment-text {
+.comment-text, .comment-email, .comment-date {
   font-size: 14px;
-  color: #555555;
+  color: #333333; /* Oscurecer el color del texto del comentario, correo y fecha */
 }
 
-/* Estilos para el correo electrónico y la fecha */
-.comment-email {
-  font-size: 14px;
-  color: #333333;
+/* Estilos para el encabezado de comentarios */
+.comments-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrar el encabezado de comentarios */
+  background-color: #5ba4e0;
+  color: #ffffff;
+  padding: 20px;
+  width: 50%;
+  height: 40px;
+  border-radius: 10px 10px 0 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+               'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+               sans-serif;
+  margin: 0 auto; /* Centrar el encabezado de comentarios */
+}
+
+.comments-header img {
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
 }
 
-.comment-date {
-  font-size: 14px;
-  color: #777777;
+.comments-header h3 {
+  font-size: 1.5em;
+  color: #ffffff; /* Color del texto del encabezado de comentarios */
 }
