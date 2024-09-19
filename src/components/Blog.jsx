@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import supabase from '../supabase';
 import blogPosts from '../blogPosts';
 import blogIcon from '../images/blog-icon.png';
-import post1 from '../posts/post1'; 
-import post2 from '../posts/post2'; 
+import post1 from '../posts/post1'; // Importa los archivos de contenido de los posts
+import post2 from '../posts/post2'; // Importa los archivos de contenido de los posts
 import './Blog.css';
 
 const postsContent = {
@@ -68,12 +68,22 @@ const Blog = () => {
     if (newComment.trim() !== '') {
       const { data, error } = await supabase
         .from('comments')
-        .insert([{ text: newComment, created_at: new Date().toISOString() }]);
+        .insert([{ 
+          text: newComment, 
+          user_id: user.id, 
+          user_email: user.email, 
+          created_at: new Date().toISOString() 
+        }]);
 
       if (error) {
         console.error(error);
       } else {
-        setComments([...comments, { text: newComment, created_at: new Date().toLocaleDateString() }]);
+        setComments([...comments, { 
+          text: newComment, 
+          user_id: user.id, 
+          user_email: user.email, 
+          created_at: new Date().toLocaleDateString() 
+        }]);
         setNewComment('');
       }
     }
@@ -125,7 +135,7 @@ const Blog = () => {
           {comments.map((comment, index) => (
             <li key={index}>
               <div className="comment-header">
-                <strong>{comment.user_name}</strong> ({new Date(comment.created_at).toLocaleDateString()})
+                <strong>{comment.user_email}</strong> ({new Date(comment.created_at).toLocaleDateString()})
               </div>
               <div className="comment-text">{comment.text}</div>
             </li>
