@@ -204,7 +204,7 @@
 
 /* Estilos para el botón de Log out */
 .comments button {
-  background-color: #f44336; /* Color de fondo rojo */
+  background-color: #173e6f; /* Color de fondo rojo */
   color: white; /* Color del texto */
   border: none;
   padding: 10px 20px;
@@ -216,11 +216,11 @@
 }
 
 .comments button:hover {
-  background-color: #da190b; /* Color de fondo rojo más oscuro al pasar el mouse */
+  background-color: #78a2fd; /* Color de fondo rojo más oscuro al pasar el mouse */
 }
 
 .comments button:active {
-  background-color: #b71c1c; /* Color de fondo rojo más oscuro al hacer clic */
+  background-color: #173e6f; /* Color de fondo rojo más oscuro al hacer clic */
 }
 
 /* Estilos para el input de comentarios */
@@ -268,4 +268,16 @@
 .comment-text {
   font-size: 14px;
   color: #555555;
+}
+
+/* Estilos para el correo electrónico y la fecha */
+.comment-email {
+  font-size: 14px;
+  color: #333333;
+  margin-right: 10px;
+}
+
+.comment-date {
+  font-size: 14px;
+  color: #777777;
 }

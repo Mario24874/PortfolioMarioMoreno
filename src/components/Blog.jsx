@@ -135,7 +135,7 @@ const Blog = () => {
           {comments.map((comment, index) => (
             <li key={index}>
               <div className="comment-header">
-                <strong>{comment.user_email}</strong> ({new Date(comment.created_at).toLocaleDateString()})
+                <span className="comment-email">{comment.user_email}</span> ({new Date(comment.created_at).toLocaleDateString()})
               </div>
               <div className="comment-text">{comment.text}</div>
             </li>
