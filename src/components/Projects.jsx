@@ -17,45 +17,38 @@ function Projects({ expandedContainer, toggleContainer }) {
         {/* Proyecto: Italianto */}
         <div className="project">
           <a href="https://italianto.vercel.app" target="_blank" rel="noopener noreferrer">
-            <img src={logoItalianto} alt="Italianto" width="100" height="100" style={{ borderRadius: '50%' }} />
+            <img src={logoItalianto} alt="Italianto" width="100" height="100" style={{ borderRadius: '50%' }} /> </a>
             <div>
               <h3>Italiantonline</h3>            
               <p>Website dedicated to the teaching of the Italian language. It has many learning resources such as audios, videos, images, dictionary and translator that accompany the lessons of each course.</p>
-            </div>
-          </a> {/* Cierre de la etiqueta a */}
+            </div>          
         </div>
-
         {/* Proyecto: Calculadora BTU */}
         <div className="project">
           <a href="https://calculadorabtu.netlify.app" target="_blank" rel="noopener noreferrer">
-            <img src={calculadoraBtu} alt="CalculadoraBTU" width="100" height="100" style={{ borderRadius: '50%' }} />
+            <img src={calculadoraBtu} alt="CalculadoraBTU" width="100" height="100" style={{ borderRadius: '50%' }} /> </a>
             <div>
               <h3>Calculator BTU</h3>            
               <p>Application to efficiently calculate the BTU needed to air-condition a space.</p>
-            </div>
-          </a> {/* Cierre de la etiqueta a */}
+            </div>           
         </div>
-
         {/* Proyecto: EduManager */}
         <div className="project">
           <a href="https://github.com/Mario24874/edumanager-web2py" target="_blank" rel="noopener noreferrer">
-            <img src={eduManager} alt="EduManager" width="100" height="100" style={{ borderRadius: '50%' }} />
+            <img src={eduManager} alt="EduManager" width="100" height="100" style={{ borderRadius: '50%' }} /> </a>
             <div>
               <h3>EduManager</h3>            
               <p>Desktop application for the administrative management of educational centres and institutions which performs the registration of students, scheduling of classes and classrooms as well as other events; it also stores the database and performs the issuance of reports, grades and grades of students.</p>
-            </div>
-          </a> {/* Cierre de la etiqueta a */}
+            </div>          
         </div>
-
         {/* Proyecto: Urban Drive */}
         <div className="project">
           <a href="https://urban-drive.netlify.app" target="_blank" rel="noopener noreferrer">
-            <img src={urbanDrive} alt="UrbanDrive" width="100" height="100" style={{ borderRadius: '50%' }} />
+            <img src={urbanDrive} alt="UrbanDrive" width="100" height="100" style={{ borderRadius: '50%' }} /> </a>
             <div>
               <h3>Urban Drive</h3>            
               <p>This application is to geographically locate the driver of your transport or delivery service in real time. It also schedules transport routes and land trips, offers weather forecasts, as well as arrival times according to destination and forecasts; it also offers messaging and notifications of incidents and delays.</p>
-            </div>
-          </a> {/* Cierre de la etiqueta a */}
+            </div>          
         </div>
       </div>
     </div>
