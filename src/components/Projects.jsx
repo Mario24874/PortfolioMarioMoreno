@@ -3,7 +3,7 @@ import projectsIcon from '../images/projects-icon.svg';
 import logoItalianto from '../images/logo_Italianto.png';
 import calculadoraBtu from '../images/CalculadoraBTU.png';
 import eduManager from '../images/EduManager.png';
-import urbanDrive from '../images/Urbandrive.png';
+import urbanDrive from '../images/UrbanDrive.png';
 import './Sections.css';
 
 function Projects({ expandedContainer, toggleContainer }) {
