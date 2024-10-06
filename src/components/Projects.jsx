@@ -43,7 +43,7 @@ function Projects({ expandedContainer, toggleContainer }) {
         </div>
         {/* Proyecto: Urban Drive */}
         <div className="project">
-          <a href="https://urban-drive.netlify.app" target="_blank" rel="noopener noreferrer">
+          <a href="https://urban-drives.netlify.app" target="_blank" rel="noopener noreferrer">
             <img src={urbanDrive} alt="UrbanDrive" width="100" height="100" style={{ borderRadius: '50%' }} /> </a>
             <div>
               <h3>Urban Drive</h3>            
