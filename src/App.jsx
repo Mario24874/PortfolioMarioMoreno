@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Sections from './components/Sections';
+import Slider from './components/Slider';
 import ImageComponent from './components/ImageComponent';
 import VideoPro from './components/VideoPro';
 import Form from './components/Form';
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Sections />} />
         </Routes>
+        <Slider />
         <ImageComponent />
         <VideoPro />
         <Blog /> 
