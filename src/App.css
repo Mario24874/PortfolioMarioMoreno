@@ -1,11 +1,4 @@
-/* Estilos globales */
-:root {
-  --bg-color-light: #ffffff;
-  --text-color-light: #000000;
-  --bg-color-dark: #1c1c1c;
-  --text-color-dark: #f0f0f0;
-}
-
+/* src/App.css */
 .App {
   text-align: center;
   background-color: var(--bg-color-light);
@@ -20,12 +13,16 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-top: 90px; 
+  transition: all 0.3s ease-in-out;  
+  
 }
 
 /* Ajustes para pantallas pequeñas */
 @media only screen and (max-width: 768px) {
   .App {
     font-size: calc(8px + 1.5vmin); /* Reduce el tamaño de la fuente */
+    padding-top: 50px; /* Ajusta este valor para pantallas pequeñas */
   }
 
   .container {

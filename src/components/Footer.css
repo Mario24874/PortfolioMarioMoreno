@@ -2,7 +2,7 @@
   background-color: transparent;
   color: #070707;
   padding: 10px;
-  height: auto; /* Ajuste de altura automática */
+  height: auto; 
   width: 100%;
   text-align: center;
 }
@@ -13,8 +13,6 @@
   margin-top: 20px;
   padding: 20px;
 }
-
-
 
 ul {
   list-style: none;
@@ -109,7 +107,6 @@ ul {
   );
 }
 
-
 .App.dark-mode .footer {
   background-color: transparent;
   color: #f0f0f0;
@@ -119,8 +116,8 @@ ul {
   color: #f0f0f0;
 }
 
+/* Estilos para pantallas más pequeñas, como teléfonos móviles */
 @media only screen and (max-width: 768px) {
-  /* Estilos para pantallas más pequeñas, como teléfonos móviles */
   .footer {
     padding: 5px;
   }
@@ -130,8 +127,8 @@ ul {
   }
 }
 
-@media only screen and (max-width: 480px) {
-  /* Estilos para pantallas aún más pequeñas */
+/* Estilos para pantallas aún más pequeñas */
+@media only screen and (max-width: 480px) {  
   .footer {
     padding: 3px;
   }

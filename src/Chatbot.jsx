@@ -1,10 +1,9 @@
+// src/Chatbot.jsx
 import React, { useEffect, useRef } from 'react';
 import Chatbot from 'react-chatbot-kit';
 import 'react-chatbot-kit/build/main.css';
 import emailjs from 'emailjs-com';
 import './Chatbot.css';
-import { findDOMNode } from 'react-dom';
-
 
 const config = {
   initialMessages: [
@@ -17,7 +16,6 @@ const config = {
     userEmail: null,
   },
   widgets: [],
-  // Usa la imagen importada
   botAvatar: '/images/custom-icon.png',
 };
 
@@ -66,7 +64,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       userEmail: email,
     }));
 
-    // Envía el correo electrónico utilizando EmailJS
     const templateParams = {
       from_email: email,
       to_email: 'marioivanmorenopineda@gmail.com',
@@ -111,12 +108,12 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   );
 };
 
-const MyChatbot = ({ isOpen, onToggle }) => {
+const MyChatbot = ({ isOpen }) => {
   const chatbotRef = useRef(null);
 
   useEffect(() => {
     if (isOpen && chatbotRef.current) {
-      const chatbotNode = findDOMNode(chatbotRef.current);
+      const chatbotNode = chatbotRef.current;
       const header = chatbotNode.querySelector('.react-chatbot-kit-chat-header');
       const inputPlaceholder = chatbotNode.querySelector('.react-chatbot-kit-chat-input-container input');
 
@@ -131,22 +128,14 @@ const MyChatbot = ({ isOpen, onToggle }) => {
   }, [isOpen]);
 
   return (
-    <div>
+    <div className="chatbot-container" ref={chatbotRef}>
       {isOpen && (
-        <div className="chatbot-container" ref={chatbotRef}>
-          <Chatbot
-            config={config}
-            messageParser={MessageParser}
-            actionProvider={ActionProvider}
-          />
-        </div>
+        <Chatbot
+          config={config}
+          messageParser={MessageParser}
+          actionProvider={ActionProvider}
+        />
       )}
-      <div
-        className={`chatbot-button ${isOpen ? 'open' : ''}`}
-        onClick={onToggle}
-      >
-        
-      </div>
     </div>
   );
 };

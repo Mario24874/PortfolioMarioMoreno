@@ -1,0 +1,144 @@
+/* src/components/Navbar.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(2, 19, 63, 0.623);
+    color: rgb(196, 189, 189);        
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 1000; 
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+  }
+  
+  .navbar.open {
+    transform: translateY(10%);
+    margin-bottom: 10px;
+  }
+  
+  .navbar-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    z-index: 1001; 
+  }
+  
+  .navbar-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(231, 219, 219);
+    transition: 0.4s;
+  }
+  
+  .navbar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0);
+  }
+  
+  .navbar-menu.open {
+    transform: translateY(0);
+  }
+  
+  .navbar-menu li {
+    margin: 0 10px;
+  }
+
+  
+.navbar-menu a.active {
+  color: rgb(255, 255, 255); /* Cambia el color para resaltar la pestaña activa */
+  font-weight: bold;
+}
+  
+  .navbar-menu a {
+    color: rgb(171, 176, 201);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .navbar-menu a:hover {
+    color: rgb(255, 255, 255);
+    
+  }
+
+  .navbar-menu a span {
+    margin-left: 5px; /* Espacio entre el icono y el texto */
+  }
+  
+  /* Media Queries para adaptabilidad */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding: 5px;
+  }
+
+  .navbar-toggle {
+    width: 25px;
+    height: 18px;
+    margin-right: 10px;
+  }
+
+  .navbar-toggle .bar {
+    height: 2px;
+  }
+
+  .navbar-menu {
+    font-size: 16px;
+  }
+
+  .navbar-menu li {
+    margin: 8px 0;
+  }
+
+  .navbar-menu a span {
+    display: none; /* Oculta el texto en pantallas pequeñas */        
+  }
+
+  .navbar-menu a {    
+    margin-left: 10px;   
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar {
+    padding: 3px;
+  }
+
+  .navbar-toggle {
+    width: 20px;
+    height: 15px;
+  }
+
+  .navbar-toggle .bar {
+    height: 2px;
+  }
+
+  .navbar-menu {
+    font-size: 14px;
+  }
+
+  .navbar-menu li {
+    margin: 6px 0;
+  }
+
+  .navbar-menu a span {
+    display: none; /* Oculta el texto en pantallas pequeñas */
+  }
+}
+

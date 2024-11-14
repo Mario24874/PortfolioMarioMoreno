@@ -1,7 +1,9 @@
+/* src/components/Header.css */
 .App-header {
   background-color: transparent;
-  color: var(--text-color-light);
+  color: white;
   padding: 0;
+  position: relative; /* Asegura que el header no esté fijo */
 }
 
 .logo-container {
@@ -25,7 +27,7 @@
 .welcome-message h1 {
   font-size: 36px;
   margin: 0;
-  color: var(--text-color-light);
+  color: white;
 }
 
 .content-container {  
@@ -55,11 +57,11 @@
 }
 
 .App.dark-mode .circle-text span {
-  color: var(--text-color-dark);
+  color: white;
 }
 
 .App.dark-mode .welcome-message h1 {
-  color: var(--text-color-dark);
+  color: white;
 }
 
 .dark-mode-toggle-container {

@@ -90,10 +90,18 @@
     z-index: 1;
 }
 @media screen and (max-width: 1023px) {
+    .banner {
+        margin-left: 15px;
+        margin-bottom: 0;
+        padding-bottom: 0;        
+    }
     .banner .slider{
         width: 60px;
         height: 80px;
         left: calc(50% - 80px);
+        margin-left: 25px;
+        margin-bottom: 0;
+        padding-bottom: 0;        
     }
     .banner .slider .item{
         transform: 
@@ -106,8 +114,16 @@
     .banner .content h1{
         text-align: center;
         width: 100%;
+        margin-right: 50px;
         text-shadow: 0 10px 20px #000;
-        font-size: 7em;
+        font-size: 7rem;
+    }
+    .banner .content .model {
+        text-align: center;
+        height: 30vh;
+        width: 100%;
+        margin-right: 50px;  
+        padding-top: 10px; 
     }
     
 }

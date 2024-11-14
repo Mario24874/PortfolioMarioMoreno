@@ -1,0 +1,252 @@
+/* Sample.css */
+@import url('https://fonts.cdnfonts.com/css/bebas-neue');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+.sample {
+    color: #eee;
+    width: 100%;
+    height: 170vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.sample .header {
+    width: var(--width-default);
+    height: 70px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.sample .header .logo img {
+    width: 100px;
+    padding-top: 50px;
+}
+
+.sample .list .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.sample .list .item .content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    text-align: left;
+    gap: 150px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-family: Poppins;
+    text-shadow: 0 0 80px #000;
+}
+
+.sample .list .item .content h2 {
+    font-size: 5em;
+    font-family: 'Bebas Neue', sans-serif;
+    line-height: 0.9em;
+    transform: translateY(-100%);
+    transition: transform 1s;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding-top: 10px;
+}
+
+.sample .list .item .content p {    
+    font-size: 24px;   
+     
+}
+
+.sample .list .item .content p:last-child {
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    padding-bottom: 25px;
+}
+
+.sample .list .item .image {
+    flex-shrink: 0;
+    width: var(--diameter);
+    height: var(--diameter);
+    background-image: var(--url);
+    background-size: var(--diameter) var(--diameter);
+    background-position: center;
+    border-radius: 50%;
+    transform: rotate(-60deg);
+    position: relative;
+    transition: 1s;
+}
+
+.sample .list .item .image::before,
+.sample .list .item .image::after {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    content: '';
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-120deg);
+    background-image: linear-gradient(to right, #0004, #0004), var(--url);
+    background-size: var(--diameter) var(--diameter);
+    background-position: center;
+    transition: 1s;
+}
+
+.sample .list .item .image::after {
+    width: 30%;
+    height: 30%;
+    background-image: var(--url);
+    border: 3px solid #fff2;
+    transform: translate(-50%, -50%) rotate(-170deg);
+}
+
+.sample .list .item .image {
+    filter: blur(30px);
+}
+
+.sample .list .item {
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sample .list .item.active {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.sample .item.active .image {
+    filter: blur(0px);
+    transform: rotate(0deg);
+}
+
+.sample .item.active .image::before,
+.sample .item.active .image::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.sample .list .item.active .content h2 {
+    transform: translateY(0);
+}
+
+.sample .list .item.active ~ .item {
+    opacity: 0;
+}
+
+.sample .item.active ~ .item .image {
+    transform: rotate(60deg);
+}
+
+.sample .item.active ~ .item .image::before {
+    transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.sample .item.active ~ .item .image::after {
+    transform: translate(-50%, -50%) rotate(170deg);
+}
+
+.sample .list .item.active ~ .item .content h2 {
+    transform: translateY(100%);
+}
+
+.sample .arrows {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    width: var(--width-default);
+    display: flex;
+    justify-content: space-between;
+}
+
+.sample .arrows button {
+    all: unset;
+    cursor: pointer;
+}
+
+.sample .list::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: min(1000px, 100vw);
+    height: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url(/images/lookhorizon.png);
+    background-size: cover;
+    background-position: top;
+    pointer-events: none;
+    animation: showModel 1s ease-in-out 1 forwards;
+}
+
+@keyframes showModel {
+    from {
+        transform: translateX(-50%) scale(1.3) translateY(88px);
+    }
+}
+
+.sample .arrows button.d-none {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media all and (max-width: 1024px) {
+    .sample .list .item .content {
+        grid-template-columns: repeat(2, 300px);
+    }
+
+    .sample .list .item .content h2 {
+        font-size: 8em;
+    }
+
+    .sample .header .logo img {
+        width: 80px;
+        padding-top: 40px;
+        margin-left: 150px;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .sample {
+        color: #eee;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .sample .list .item .content {
+        grid-template-columns: 80%;
+        justify-content: center;
+        gap: 20px;
+        top: 70px;
+    }
+
+    .sample .list .item .content h2 {
+        font-size: 4em;
+    }
+
+    .sample .list .item .content p {
+        font-size: small;
+    }
+
+    .sample .header .logo img {
+        width: 50px;
+        padding-top: 20px;
+        margin-left: 300px;
+    }
+}

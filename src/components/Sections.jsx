@@ -1,3 +1,4 @@
+// src/components/Sections.jsx
 import React, { useState } from 'react';
 import About from './About';
 import Skills from './Skills';
@@ -14,7 +15,7 @@ function Sections() {
   };
 
   return (
-    <div className="container-section">
+    <div id="section-sections" className="container-section">
       <About expandedContainer={expandedContainer} toggleContainer={toggleContainer} />
       <Skills expandedContainer={expandedContainer} toggleContainer={toggleContainer} />
       <Technologies expandedContainer={expandedContainer} toggleContainer={toggleContainer} />
