@@ -45,14 +45,14 @@
 }
 
 .blog-item.expanded {
-  grid-column: span 2;
+  grid-column: span 2;  
 }
 
 .blog-thumbnail-wrapper {
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 10px;  
 }
 
 .blog-thumbnail {
@@ -67,7 +67,7 @@
 }
 
 .blog-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin: 10px 0;
   color: #333333;
@@ -80,16 +80,17 @@
   margin-bottom: 10px;
 }
 
-.blog-content-wrapper {
+.blog-content-wrapper {  
   max-height: 300px; /* Altura máxima para el contenedor del contenido */
   overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede la altura máxima */
   padding: 10px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #ccc;  
 }
 
 .blog-content {
-  font-size: 14px;
+  font-size: 24px;
   color: #555555;
+  align-items: center;  
   line-height: 1.6; /* Ajusta el espaciado entre líneas para mejorar la legibilidad */
   text-align: justify; /* Justifica el texto para que se ajuste al contenedor */
 }
@@ -98,7 +99,7 @@
   max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
   height: auto;
   display: block;
-  margin: 10px 0; /* Añade un margen superior e inferior a las imágenes */
+  margin: 10px 0;   
 }
 
 /* Estilos para modo oscuro */
